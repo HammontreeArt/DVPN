@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Author: 	S.Hammontree
+#Date: 		2021-11-25
+#
+#
+#-----------------------------------------------------------------------------------
 clear
 echo " "
 echo "Querying Sentinel Nodes.  Please standy by..."
