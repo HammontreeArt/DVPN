@@ -64,8 +64,8 @@ echo "" >> $log
 echo "" >> $log
 echo " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX NODE QUOTA RESULTS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" >> $log
 echo " " >> $log
-echo "  MONIKER      SUB  NODE ADDRESS                                      WALLET ADDRESS                                  ALLOTTED    CONSUMED   HANDSHAKE  NODE-STATUS " >> $log
-echo "  ----------- ----- -----------------------------------------------   -------------------------------------------   --------    --------   ---------  ----------- " >> $log
+echo "  MONIKER      SUB  NODE ADDRESS                                      WALLET ADDRESS                                  ALLOTTED    CONSUMED   HANDSHAKE  NODE-STATUS  PEERS" >> $log
+echo "  ----------- ----- -----------------------------------------------   -------------------------------------------   --------    --------   ---------  -----------  -----" >> $log
 echo "@@@ BEGIN QUERY NODE QUOTA... "
 echo " "
 echo " "
@@ -90,10 +90,12 @@ do
                 status="ACVTIVE"
         fi
 
+        peers=$(echo $node | cut -d "|" -f 9)
+
         sentinelcli query quotas --home "${HOME}/.sentinelcli" --node https://rpc.sentinel.co:443 --page 1 $i >> $tmp
         node=$(sed '/MONIKER\|+---\|ADDRESS/d' $tmp)
 
-        echo "| "${moniker[$a]}" "${nodes[$a]}" $node   "$shake"    |  "$status >> $log
+        echo "| "${moniker[$a]}" "${nodes[$a]}" $node   "$shake"    |  "$status"    "$peers  >> $log
         true > $tmp
         a=$(expr $a + 1)
         echo -ne "  .... $a of 10 nodes .... \r"
