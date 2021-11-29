@@ -62,7 +62,7 @@ fi
 
 echo "" >> $log
 echo "" >> $log
-echo " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX NODE QUOTA RESULTS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" >> $log
+echo " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX NODE QUOTA RESULTS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" >> $log
 echo " " >> $log
 echo "  MONIKER      SUB  NODE ADDRESS                                      WALLET ADDRESS                                  ALLOTTED    CONSUMED   HANDSHAKE  NODE-STATUS  PEERS" >> $log
 echo "  ----------- ----- -----------------------------------------------   -------------------------------------------   --------    --------   ---------  -----------  -----" >> $log
