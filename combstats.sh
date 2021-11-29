@@ -97,6 +97,7 @@ do
 
         echo "| "${moniker[$a]}" "${nodes[$a]}" $node   "$shake"    |  "$status"    "$peers  >> $log
         true > $tmp
+		true > $nod
         a=$(expr $a + 1)
         echo -ne "  .... $a of 10 nodes .... \r"
 done
